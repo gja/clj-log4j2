@@ -13,7 +13,7 @@
       (.log logger level clj-message throwable)
       (.log logger level clj-message))
     (if throwable
-      (.log logger level ^Object message)
+      (.log logger level ^Object message throwable)
       (if params
         (.log logger level ^String message ^objects (into-array Object params))
         (.log logger level ^Object message)))))
