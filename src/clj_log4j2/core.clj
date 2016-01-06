@@ -1,8 +1,14 @@
 (ns clj-log4j2.core
   (:import [org.apache.logging.log4j LogManager Logger Level]
-           [org.apache.logging.log4j.message Message]))
+           [org.apache.logging.log4j.message Message]
+           [java.io StringWriter PrintWriter]))
 
 (set! *warn-on-reflection* true)
+
+(defn exception->string [^Throwable e]
+  (let [string-writer (StringWriter.)]
+    (.printStackTrace e (PrintWriter. string-writer))
+    (.toString string-writer)))
 
 (defn log [^Logger logger ^Level level {:keys [^Message clj-message
                                                ^Throwable throwable
