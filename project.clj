@@ -1,4 +1,4 @@
-(defproject clj-log4j2 "0.1.0"
+(defproject clj-log4j2 "0.1.1"
   :description "Easily add log4j2 into your clojure project"
   :url "http://github.com/gja/clj-log4j2"
   :license {:name "Eclipse Public License"
